@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeatPlan - Exam Hall Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>SeatPlan</h1>
+    <p>Exam Hall Seating Arrangement Generator</p>
+</header>
+
+<div class="container">
+
+    <!-- HALL SECTION -->
+    <section class="card">
+
+        <h2>🏫 Create Exam Hall</h2>
+
+        <form id="hallForm">
+
+            <div class="form-group">
+                <label>Hall Name</label>
+                <input
+                        type="text"
+                        id="hallName"
+                        placeholder="Example: Hall A"
+                        required>
+            </div>
+
+            <div class="form-group">
+                <label>Rows</label>
+                <input
+                        type="number"
+                        id="hallRows"
+                        min="1"
+                        placeholder="Example: 5"
+                        required>
+            </div>
+
+            <div class="form-group">
+                <label>Columns</label>
+                <input
+                        type="number"
+                        id="hallColumns"
+                        min="1"
+                        placeholder="Example: 6"
+                        required>
+            </div>
+
+            <button type="submit">
+                Create Hall
+            </button>
+
+        </form>
+
+        <div id="hallMessage"></div>
+
+    </section>
+
+
+    <!-- HALL LIST -->
+    <section class="card">
+
+        <div class="section-header">
+            <h2>🏢 Available Halls</h2>
+
+            <button
+                    type="button"
+                    class="refresh-btn"
+                    onclick="loadHalls()">
+                Refresh
+            </button>
+        </div>
+
+        <div id="hallList">
+            Loading halls...
+        </div>
+
+    </section>
+
+
+    <!-- STUDENT SECTION -->
+    <section class="card">
+
+        <h2>👨‍🎓 Register Student</h2>
+
+        <form id="studentForm">
+
+            <div class="form-group">
+                <label>Register Number</label>
+                <input
+                        type="text"
+                        id="registerNumber"
+                        placeholder="Example: 23AIDS001"
+                        required>
+            </div>
+
+            <div class="form-group">
+                <label>Student Name</label>
+                <input
+                        type="text"
+                        id="studentName"
+                        placeholder="Example: Thianesh"
+                        required>
+            </div>
+
+            <div class="form-group">
+                <label>Section</label>
+                <input
+                        type="text"
+                        id="studentSection"
+                        placeholder="Example: A"
+                        required>
+            </div>
+
+            <button type="submit">
+                Register Student
+            </button>
+
+        </form>
+
+        <div id="studentMessage"></div>
+
+    </section>
+
+
+    <!-- STUDENT LIST -->
+    <section class="card">
+
+        <div class="section-header">
+            <h2>👥 Registered Students</h2>
+
+            <button
+                    type="button"
+                    class="refresh-btn"
+                    onclick="loadStudents()">
+                Refresh
+            </button>
+        </div>
+
+        <div id="studentList">
+            Loading students...
+        </div>
+
+    </section>
+
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>
